@@ -1,0 +1,189 @@
+{
+    "$__mpe_config_新建Pipeline1": {
+        "$__mpe_code": {
+            "prefix": "",
+            "savedViewport": {
+                "x": -235,
+                "y": -34,
+                "zoom": 1
+            },
+            "filename": "新建Pipeline1",
+            "version": "v1.3.1"
+        }
+    },
+    "Test43入口": {
+        "next": [
+            "点击搜索框"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 12,
+                "y": 73
+            }
+        }
+    },
+    "点击搜索框": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "expected": [
+                    "搜索网页",
+                    "Search the web",
+                    "Search"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": true
+            }
+        },
+        "timeout": 30000,
+        "next": [
+            "输入文字"
+        ],
+        "on_error": [
+            "失败"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 332,
+                "y": 12
+            }
+        }
+    },
+    "输入文字": {
+        "action": {
+            "type": "InputText",
+            "param": {
+                "input_text": "MaaFramework"
+            }
+        },
+        "post_delay": 300,
+        "next": [
+            "按回车"
+        ],
+        "on_error": [
+            "失败"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 652,
+                "y": 602
+            }
+        }
+    },
+    "按回车": {
+        "action": {
+            "type": "ClickKey",
+            "param": {
+                "key": 13
+            }
+        },
+        "post_delay": 3500,
+        "next": [
+            "循环控制"
+        ],
+        "on_error": [
+            "失败"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 972,
+                "y": 569
+            }
+        }
+    },
+    "循环控制": {
+        "timeout": 300,
+        "next": [
+            "检测MaaFramework"
+        ],
+        "on_error": [
+            "滑动控制"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 1292,
+                "y": 417
+            }
+        }
+    },
+    "检测MaaFramework": {
+        "recognition": {
+            "type": "FeatureMatch",
+            "param": {
+                "template": [
+                    "123.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click",
+            "param": {
+                "target": true
+            }
+        },
+        "next": [
+            "找到并停止"
+        ],
+        "on_error": [
+            "滑动控制"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 652,
+                "y": 203
+            }
+        }
+    },
+    "滑动控制": {
+        "max_hit": 10,
+        "action": {
+            "type": "Scroll",
+            "param": {
+                "target": true,
+                "dx": 0,
+                "dy": -120
+            }
+        },
+        "post_delay": 150,
+        "next": [
+            "循环控制"
+        ],
+        "on_error": [
+            "失败"
+        ],
+        "$__mpe_code": {
+            "position": {
+                "x": 989,
+                "y": 64
+            }
+        }
+    },
+    "找到并停止": {
+        "action": {
+            "type": "StopTask",
+            "param": {}
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 971,
+                "y": 426
+            }
+        }
+    },
+    "失败": {
+        "action": {
+            "type": "StopTask",
+            "param": {}
+        },
+        "$__mpe_code": {
+            "position": {
+                "x": 1932,
+                "y": 427
+            }
+        }
+    }
+}

@@ -27,10 +27,10 @@
             "type": "Win32",
             "win32": {
                 "class_regex": ".*",
-                "window_regex": "Visual Studio",
+                "window_regex": ".*",
                 // 截图及控制方式，请根据项目实际情况修改
                 // 文档: https://maafw.xyz/docs/2.4-ControlMethods
-                "screencap": "PrintWindow", // 截图方式
+                "screencap": "ScreenDC", // 截图方式 ScreenDC | PrintWindow
                 "mouse": "PostMessageWithCursorPos", // 鼠标控制方式
                 "keyboard": "PostMessageWithCursorPos" // 键盘控制方式
             }
@@ -81,6 +81,13 @@
         {
             "name": "带Custom的任务",
             "entry": "MyTask4"
+        },
+        {
+            "name": "Test43_滚动查找MaaFramework",
+            "entry": "Test43入口",
+            "controller": [
+                "桌面端"
+            ]
         }
     ],
     "option": {
